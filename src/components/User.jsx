@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const User = () => {
   const [userData, setUserData] = useState(null);
-  
+
   useEffect(() => {
     const fetchData = async () => {
         try {
@@ -25,4 +25,5 @@ const User = () => {
             </div> : <p>No data recived</p>
   )
 };
+
 export default User;
