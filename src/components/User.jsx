@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 
 const User = () => {
   const [userData, setUserData] = useState(null);
-  const [error, setError] = useState(null);
-
+  
   useEffect(() => {
     const fetchData = async () => {
         try {
@@ -14,19 +13,16 @@ const User = () => {
             const result = await response.json();
             setUserData(result);
         } catch(err) {
-            setError(err.message)
+            console.error(err)
         }
     }
     fetchData();
   }, [])
 
   return (
-    <>
-    {error && <p>Error: {error}</p>}
-    {userData ? <div className="userInfo">
+    userData ? <div className="userInfo">
                 <p><span>User name is - </span>{userData.name}</p>
-            </div> : <p>No data recived</p>}
-    </>
+            </div> : <p>No data recived</p>
   )
 };
 export default User;
