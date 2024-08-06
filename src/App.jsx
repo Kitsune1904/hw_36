@@ -7,17 +7,11 @@ import User from "./components/User";
 function App() {
   const [notesArr, setNotesArr] = useState(JSON.parse(localStorage.getItem("notes")) || []);
   
-
-
   const inputRef = useRef(null);
 
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notesArr))
   }, [notesArr]);
-
-  useEffect(() => {
-
-  })
 
   const handleKeyDown = useCallback((event) => {
     if (event.key === 'Enter') {
