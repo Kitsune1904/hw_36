@@ -21,7 +21,7 @@ function App() {
 
   const clickHandler = useCallback(() => {
     const inputVal = inputRef.current.value;
-    if (inputVal != "") {
+    if (inputVal !== "") {
       setNotesArr([...notesArr, inputVal]);
     } else {
       alert("Fild can`t be empty");
@@ -48,7 +48,7 @@ function App() {
         <User/>
       </div>
       <div className="notesListHolder">
-        {notesArr.length == 0 ? (
+        {notesArr.length === 0 ? (
           <p>User`s note list is empty</p>
         ) : (
           <NoteList>
