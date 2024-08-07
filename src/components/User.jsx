@@ -27,7 +27,7 @@ const User = () => {
     {error && <p>Error - {error}</p> }
     {userData ? <div className="userInfo">
                 <p><span>User name is - </span>{userData.name}</p>
-            </div> : <p>No data recived yet</p>}
+            </div> : <p>Loading...</p>}
     </>
   )
 };
